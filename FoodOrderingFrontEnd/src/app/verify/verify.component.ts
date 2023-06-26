@@ -28,7 +28,7 @@ export class VerifyComponent implements OnInit {
 
     this.myLogin=new FormGroup({
       email:new FormControl('',[Validators.required,Validators.email]),
-      otp:new FormControl('',[Validators.required,Validators.minLength(6)])
+      otp:new FormControl('',[Validators.required,Validators.minLength(3)])
     })
   }
 

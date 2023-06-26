@@ -46,6 +46,7 @@ export class UserService {
         next:(user)=>{
           
           this.setUserLocalStorage(user);
+          console.log("user",this.getUserLocalStorage());
           this.userSubject.next(user);
           this.toastr.success(
             `Welcome to Gorana Food House`,
@@ -59,6 +60,21 @@ export class UserService {
       }
     ));
    }
+   getProfile():Observable<any>{
+    let headers={
+      'Authorization':this.getUserLocalStorage().token
+    }
+    console.log(this.getUserLocalStorage());
+    return this.http.get('http://localhost:3000/profile',{headers:headers}).pipe(
+      tap({
+        next:(user)=>{
+          this.toastr.success(
+            "session verified"
+          )},error:(err)=>{
+            this.toastr.error("session expired")}
+      })
+    );
+  }
 
    logout(){
     this.userSubject.next(new User());
@@ -90,7 +106,7 @@ export class UserService {
     localStorage.setItem(this.userKey,JSON.stringify(user));
   }
 
-  private getUserLocalStorage(){
+  getUserLocalStorage(){
     const userJson=localStorage.getItem(this.userKey);
     if(userJson) return JSON.parse(userJson) as User;
     return new User();

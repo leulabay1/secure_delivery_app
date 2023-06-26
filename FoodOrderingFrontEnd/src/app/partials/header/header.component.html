@@ -7,9 +7,10 @@
                     <a routerLink="/login">Login</a>
                 </li>
                 <li *ngIf="isAuth()" class="menu-container">
-                    <a routerLink="/profile">{{user.firstName}}</a>
+                    <a>{{user.firstName}}</a>
                     <div class="menu">
-                        <a routerLink="/profile">Profile</a>
+                        <a (click)="gotoCreate()">Create A food</a>
+                        <a (click)="gotoProfile()">Profile</a>
                         <a routerLink="/orders">Orders</a>
                         <a (click)="logOut()">Log Out</a>
                     </div>

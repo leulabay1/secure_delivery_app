@@ -8,6 +8,7 @@ const bcrypt= require('bcryptjs');
 const userModel= require('../models/userModel');
 const nodemailer = require('nodemailer');
 const speakeasy = require('speakeasy');
+const cheackAuth = require("../middleware/checkAuth")
 
 router.get("/users/seed",async(req,res)=>{
     const userCount= await userModel.countDocuments();
@@ -138,8 +139,9 @@ const generateTokenResponse = (user)=>{
         email:user.email,
         isAdmin:user.isAdmin
     }
-    const token=jwt.sign(payload,"leulabayejigu",{expiresIn:"30d"});
+    const token=jwt.sign(payload,"leulabayejigu",{expiresIn:"200s"});
     user.token=token;
+    console.log("tooken",token);
     return user;
 }
 
@@ -162,5 +164,25 @@ router.get('/cart',asyncHandler(
         res.json(userCart.cart);
     }
 ))
+router.get('/profile', asyncHandler(async(req, res) => {
+    const token = req.headers.authorization;
+  
+    if (!token) {
+      return res.status(401).json({ message: 'Authorization token is missing' });
+    }
+    try {
+      console.log('token backend recieved',token);
+      const decoded = jwt.verify(token, "leulabayejigu");
+      const userId = decoded.id;
+      console.log('userId',userId);
+      const userProfile = await userModel.findOne({_id:userId})
+      
+      res.json(userProfile);
+    } catch (err) {
+      console.log(err);
+      return res.status(401).json({ message: 'Invalid token' });
+    }
+  }));
+  
 
 module.exports=router;

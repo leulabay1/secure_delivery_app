@@ -41,5 +41,14 @@ router.get('/foods/:foodId',async(req,res)=>{
     const food = await foodModel.findById(foodId);
     res.send(food);
 })
+router.post('/foods/create',async(req,res)=>{
+    try {
+    const newFood=req.body;
+    const food= await foodModel.create(newFood);
+    res.status(201).send(food);
+    } catch (error) {
+        res.send(error);
+    }
+})
 
 module.exports=router;

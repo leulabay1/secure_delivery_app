@@ -39,6 +39,9 @@ export class FoodService {
     return this.http.get<Foods[]>("http://localhost:3000/foods/search/"+searchTerm);
   }
 
+  createFood(food:Foods):Observable<Foods> {
+    return this.http.post<Foods>("http://localhost:3000/foods/create",food);
+  }
 
   // addToFav(id:number){
   //   this.getFoodById(id).favorite=!this.getFoodById(id).favorite;

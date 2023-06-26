@@ -30,6 +30,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { LoaderComponent } from './partials/loader/loader.component';
 import { LoaderInterceptor } from './partials/loader/loader.interceptor';
 import { VerifyComponent } from './verify/verify.component';
+import { CreateFoodComponent } from './create-food/create-food.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { VerifyComponent } from './verify/verify.component';
     FailedComponent,
     OrdersComponent,
     LoaderComponent,
-    VerifyComponent
+    VerifyComponent,
+    CreateFoodComponent
   ],
   imports: [
     BrowserModule,

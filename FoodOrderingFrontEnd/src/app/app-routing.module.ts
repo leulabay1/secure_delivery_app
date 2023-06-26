@@ -14,8 +14,10 @@ import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
 import { TesComponent } from './tes/tes.component';
 import { VerifyComponent } from './verify/verify.component';
+import { CreateFoodComponent } from './create-food/create-food.component';
 
 const routes: Routes = [
+  {path: "create", component: CreateFoodComponent, canActivate:[GuardGuard]},
   {path:'home', component:HomeComponent, canActivate:[GuardGuard]},
   {path:'verification', component:VerifyComponent},
   {path:'search/:searchItem',component:HomeComponent, canActivate:[GuardGuard]},
