@@ -1,9 +1,9 @@
 const mongoose=require('mongoose');
-const foodSchema=require('../models/foodModel').foodSchema;
-const orderStatus = require('../orderStatus');
+const foodSchema = require('./Food').foodSchema;
+const orderStatus = require('../shared/enums/orderStatus');
 const latLngSchema = new mongoose.Schema({
-    lat:{type:String,required:true},
-    lng:{type:String,required:true}
+    lat: {type: String, required: true},
+    lng: {type: String, required: true}
 })
 
 const latlng  = new mongoose.model("order", latLngSchema);

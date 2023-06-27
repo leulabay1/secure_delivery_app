@@ -1,11 +1,10 @@
 const jwt= require('jsonwebtoken');
-module.exports= (req,res,next)=>{
+module.exports = (req, res, next) => {
     const token = req.headers.access_token;
-    if(!token) return res.status(401).send();
+    if (!token) return res.status(401).send();
 
     try {
-        const decodeUser = jwt.verify(token,"leulabayejigu");
-        req.user= decodeUser;
+        req.user = jwt.verify(token, "leulabayejigu");
     } catch (error) {
         res.status(401).send()
     }
