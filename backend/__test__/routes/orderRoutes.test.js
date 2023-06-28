@@ -2,7 +2,7 @@ const express = require('express');
 const request = require('supertest');
 const router = require('../../routes/orderRoutes');
 const orderController = require('../../controllers/orderController');
-const authMiddleware = require('../../middleware/checkAuth');
+const authMiddleware = require('../../middleware/authMiddleware');
 
 jest.mock('../../controllers/orderController');
 jest.mock('../../middleware/checkAuth');
