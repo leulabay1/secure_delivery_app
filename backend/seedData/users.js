@@ -2,7 +2,7 @@ const users=[
     {
         firstName:"Leul",
         lastName:" Abay",
-        email:"leulabay@gmail.com",
+        email:"ffekirnew0808@gmail.com",
         password:"123456",
         mobile:"7568347261",
         houseNumber:"703",
