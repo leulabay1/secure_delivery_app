@@ -15,6 +15,10 @@ const foodController = require('../controllers/foodController');
  */
 router.get("/foods/seed", foodController.seedDocuments);
 
+router.get("/", (req, res)=>{
+    res.send(JSON.stringify({"message": "wellcome to the delivary app"}));
+})
+
 /**
  * @swagger
  * /foods:
