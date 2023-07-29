@@ -83,7 +83,7 @@ export class CartService {
     const user = JSON.parse(localStorage.getItem('user') || '');
     if (localStorage.getItem('user')) {
       const userId = user.id;
-      this.http.post<User>(`http://localhost:3000/user/${userId}`, this.cart)
+      this.http.post<User>(`https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/user/${userId}`, this.cart)
         .subscribe((response) => {
           console.log('updated cart', response);
         });

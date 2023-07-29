@@ -17,13 +17,13 @@ export class DataService {
 
   // login function 
   onLogin(loginForm:Object):Observable<any>{
-    return this.http.post(`http://localhost:3000/login`,loginForm);
+    return this.http.post(`https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/login`,loginForm);
   }
 
 
   // register function 
   onRegister(user:Object):Observable<any>{
-     return this.http.post('http://localhost:3000/register',user)
+     return this.http.post('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/register',user)
   }
 
   // user profile function 
@@ -31,7 +31,7 @@ export class DataService {
     let headers={
       'Authorization':"Bearer " + localStorage.getItem('token')
     }
-    return this.http.get('http://localhost:3000/profile',{headers:headers});
+    return this.http.get('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/profile',{headers:headers});
   }
 
   // check user is loggedin 
