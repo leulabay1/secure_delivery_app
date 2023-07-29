@@ -3,8 +3,8 @@
     "name": "delivery",
     "builds": [
         {
-            "sr": "app.js",
-            "user": "@vercel/node"
+            "src": "app.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [
