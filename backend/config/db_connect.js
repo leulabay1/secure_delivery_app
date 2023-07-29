@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config({ path: './config.env' })
-const url = "//leul1:1nE5YenZ4d3CEzoa@cluster0.hslqx7t.mongodb.net/food?retryWrites=true&w=majority";
+const url = "mongodb+srv://leul1:1nE5YenZ4d3CEzoa@cluster0.hslqx7t.mongodb.net/food?retryWrites=true&w=majority";
 console.log(url);
 const connectionParams={
     useNewUrlParser: true,
