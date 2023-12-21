@@ -48,7 +48,7 @@ secure-delivery-system/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/secure-delivery-system.git
+   git clone https://github.com/leulabay1/secure-delivery-app.git
    ```
 
 2. Install dependencies:
