@@ -83,13 +83,8 @@ Copy the example `.env` file in the `backend` folder and configure necessary var
 
 ## Contributing
 
-Contributions welcome! Follow [contribution guidelines](CONTRIBUTING.md) for pull requests.
+Contributions welcome!.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Thanks to contributors and the open-source community.
-- Mention any external libraries or resources used.
