@@ -57,7 +57,7 @@ export class CartService {
       (prevSum, currentItem) => prevSum + currentItem.quantity,0);
     const cartJson = JSON.stringify(this.cart);
     if (localStorage.getItem('user')) {
-      console.log('cart',cartJson);    
+      console.log('cart',cartJson);
       localStorage.setItem('Cart', cartJson);
       this.storeCart();
     } else {
@@ -83,7 +83,7 @@ export class CartService {
     const user = JSON.parse(localStorage.getItem('user') || '');
     if (localStorage.getItem('user')) {
       const userId = user.id;
-      this.http.post<User>(`https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/user/${userId}`, this.cart)
+      this.http.post<User>(`https://secure-delivery-app-three.vercel.app/user/${userId}`, this.cart)
         .subscribe((response) => {
           console.log('updated cart', response);
         });

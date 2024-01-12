@@ -26,7 +26,7 @@ export class UserService {
    }
 
    login(userLogin:IUserLogin):Observable<User>{
-    return this.http.post<User>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/users/login",userLogin).pipe(
+    return this.http.post<User>("https://secure-delivery-app-three.vercel.app/users/login",userLogin).pipe(
       tap({
         next:(user)=>{
           this.toastr.success(
@@ -41,10 +41,10 @@ export class UserService {
     ));
    }
    verify(userLogin:IUserLogin):Observable<User>{
-    return this.http.post<User>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/users/verify",userLogin).pipe(
+    return this.http.post<User>("https://secure-delivery-app-three.vercel.app/users/verify",userLogin).pipe(
       tap({
         next:(user)=>{
-          
+
           this.setUserLocalStorage(user);
           console.log("user",this.getUserLocalStorage());
           this.userSubject.next(user);
@@ -65,7 +65,7 @@ export class UserService {
       'Authorization':this.getUserLocalStorage().token
     }
     console.log(this.getUserLocalStorage());
-    return this.http.get('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/profile',{headers:headers}).pipe(
+    return this.http.get('https://secure-delivery-app-three.vercel.app/profile',{headers:headers}).pipe(
       tap({
         next:(user)=>{
           this.toastr.success(
@@ -85,8 +85,8 @@ export class UserService {
 
    register(userRegister:IUserRegister):Observable<User>{
     console.log("userRegister",userRegister);
-    
-    return this.http.post<User>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/users/register",userRegister).pipe(
+
+    return this.http.post<User>("https://secure-delivery-app-three.vercel.app/users/register",userRegister).pipe(
       tap({
         next:(user)=>{
           this.toastr.success(

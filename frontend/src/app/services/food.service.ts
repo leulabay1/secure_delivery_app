@@ -28,19 +28,19 @@ export class FoodService {
   }
 
   getAll():Observable<Foods[]> {
-    return this.http.get<Foods[]>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/foods");
+    return this.http.get<Foods[]>("https://secure-delivery-app-three.vercel.app/foods");
   }
 
   getFoodById(id:number):Observable<Foods> {
-    return this.http.get<Foods>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/foods/"+id);
+    return this.http.get<Foods>("https://secure-delivery-app-three.vercel.app/foods/"+id);
   }
 
   getFoodBySearch(searchTerm:string):Observable<Foods[]> {
-    return this.http.get<Foods[]>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/foods/search/"+searchTerm);
+    return this.http.get<Foods[]>("https://secure-delivery-app-three.vercel.app/foods/search/"+searchTerm);
   }
 
   createFood(food:Foods):Observable<Foods> {
-    return this.http.post<Foods>("https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/foods/create",food);
+    return this.http.post<Foods>("https://secure-delivery-app-three.vercel.app/foods/create",food);
   }
 
   // addToFav(id:number){

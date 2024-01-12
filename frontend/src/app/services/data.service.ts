@@ -15,26 +15,26 @@ export class DataService {
   loggedIn:boolean=false;
 
 
-  // login function 
+  // login function
   onLogin(loginForm:Object):Observable<any>{
-    return this.http.post(`https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/login`,loginForm);
+    return this.http.post(`https://secure-delivery-app-three.vercel.app/login`,loginForm);
   }
 
 
-  // register function 
+  // register function
   onRegister(user:Object):Observable<any>{
-     return this.http.post('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/register',user)
+     return this.http.post('https://secure-delivery-app-three.vercel.app/register',user)
   }
 
-  // user profile function 
+  // user profile function
   getProfile():Observable<any>{
     let headers={
       'Authorization':"Bearer " + localStorage.getItem('token')
     }
-    return this.http.get('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/profile',{headers:headers});
+    return this.http.get('https://secure-delivery-app-three.vercel.app/profile',{headers:headers});
   }
 
-  // check user is loggedin 
+  // check user is loggedin
   isAuth(){
     if(localStorage.getItem('token')){
       return true;
@@ -44,5 +44,5 @@ export class DataService {
     }
   }
 
-   
+
 }

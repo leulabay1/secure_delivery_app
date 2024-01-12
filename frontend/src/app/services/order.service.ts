@@ -13,19 +13,19 @@ export class OrderService {
 
   create(order:Order){
     alert(order.name);
-    
-    return this.http.post<Order>('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/orders/create',order);
+
+    return this.http.post<Order>('https://secure-delivery-app-three.vercel.app/orders/create',order);
   }
   getNewOrderForCurrentUser():Observable<Order>{
-    return this.http.get<Order>('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/orders/newOrderFromCurrentUser');
+    return this.http.get<Order>('https://secure-delivery-app-three.vercel.app/orders/newOrderFromCurrentUser');
   }
 
   pay(order:Order):Observable<string>{
-    return this.http.post<string>('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/pay',order);
+    return this.http.post<string>('https://secure-delivery-app-three.vercel.app/pay',order);
   }
 
   getAllOrders():Observable<Order[]>{
-    return this.http.get<Order[]>('https://secure-delivery-app-8xqw-6kxvvlydv-leulabay1.vercel.app/orders');
+    return this.http.get<Order[]>('https://secure-delivery-app-three.vercel.app/orders');
   }
 
 }
