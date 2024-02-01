@@ -135,14 +135,14 @@ async function sendEmailWithOTP(email, otp) {
             // Configure the email service provider
             service: 'gmail', host: 'smtp.gmail.com', // Replace with your email service provider
             auth: {
-                user: 'Leulabay4@gmail.com', // Replace with your email address
-                pass: 'imeoumcjwlyuylyz', // Replace with your email password
+                user: 'zelalemhab19@gmail.com', // Replace with your email address
+                pass: 'pqppksesdfvlcylt', // Replace with your email password
             },
         });
 
         // Send the email
         const info = await transporter.sendMail({
-            from: 'leulabay4@gmail.com', // Replace with your email address
+            from: 'zelalemhab19@gmail.com', // Replace with your email address
             to: email, // Recipient's email address
             subject: 'One-Time Password (OTP)', text: `Your OTP: ${otp}`,
         });

@@ -27,13 +27,13 @@ exports.sendEmailWithOTP = async (email, otp) => {
       service: "gmail",
       host: "smtp.gmail.com",
       auth: {
-        user: "Leulabay4@gmail.com",
-        pass: "imeoumcjwlyuylyz",
+        user: "zelalemhab19@gmail.com",
+        pass: "pqppksesdfvlcylt",
       },
     });
 
     const info = await transporter.sendMail({
-      from: "leulabay4@gmail.com",
+      from: "zelalemhab19@gmail.com",
       to: email,
       subject: "One-Time Password (OTP)",
       text: `Your OTP: ${otp}`,
